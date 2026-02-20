@@ -1,0 +1,45 @@
+header:
+  version: 11
+
+repos:
+  poky:
+    url: https://git.yoctoproject.org/poky
+    branch: scarthgap
+    path: layers/third-party/poky
+    layers:
+      meta:
+      meta-poky:
+
+  meta-openembedded:
+    url: https://github.com/openembedded/meta-openembedded.git
+    branch: scarthgap
+    path: layers/third-party/meta-openembedded
+    layers:
+      meta-oe:
+      meta-initramfs:
+      meta-python:
+      meta-networking:
+      
+  meta-arm:
+    url: https://git.yoctoproject.org/meta-arm
+    branch: scarthgap
+    path: layers/third-party/meta-arm
+    layers:
+      meta-arm:
+      meta-arm-toolchain:
+
+  meta-ecw:
+    path: layers/project/meta-ecw
+    layers:
+      meta-ecw-core:
+
+local_conf_header:
+
+  General: |
+    PACKAGE_CLASSES ?= "package_ipk"
+    SSTATE_DIR = "${HOME}/yocto/share/sstate-cache/${MACHINE}"
+    DL_DIR = "${HOME}/yocto/share/downloads"
+
+distro: microforge
+target: ecw-core-image
+

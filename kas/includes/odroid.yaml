@@ -1,0 +1,16 @@
+header:
+  version: 11
+
+repos:
+  meta-meson:
+    url: https://github.com/superna9999/meta-meson
+    branch: scarthgap
+    path: layers/third-party/meta-meson
+
+
+machine: hardkernel-odroidn2plus
+
+local_conf_header:
+  ODroid: |
+    KERNEL_IMAGETYPE = "fitImage"
+    KERNEL_CLASSES:append = " kernel-fitimage"

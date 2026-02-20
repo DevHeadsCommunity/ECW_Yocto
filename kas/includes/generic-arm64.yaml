@@ -1,0 +1,14 @@
+header:
+  version: 11
+
+repos:
+  poky:
+    layers:
+      meta-yocto-bsp:
+
+machine: genericarm64
+
+local_conf_header:
+  InitramFS: |
+    INITRAMFS_IMAGE_BUNDLE = "1"
+    

@@ -1,0 +1,10 @@
+header:
+  version: 19
+  includes:
+    - kas/main.yaml
+
+local_conf_header:
+  nfsroot: |
+    HOST_IP = "192.168.20.1"
+    MOUNT_PATH = "/home/ming/wip/devheads/rootfs"
+

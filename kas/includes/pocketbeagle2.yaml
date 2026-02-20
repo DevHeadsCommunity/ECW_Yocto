@@ -1,0 +1,19 @@
+header:
+  version: 11
+
+repos:
+  meta-ti:
+    url: https://git.yoctoproject.org/meta-ti
+    branch: scarthgap
+    path: layers/third-party/meta-ti
+    layers:
+      meta-ti-bsp:
+      meta-beagle:
+
+machine: pocketbeagle2
+
+local_conf_header:
+  InitramFS: |
+    INITRAMFS_IMAGE_BUNDLE = "1"
+
+    

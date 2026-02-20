@@ -1,0 +1,25 @@
+header:
+  version: 11
+
+repos:
+  meta-pocketbeagle:
+    url: https://github.com/twoerner/meta-pocketbeagle
+    branch: scarthgap
+    path: layers/third-party/meta-pocketbeagle
+
+  meta-ti:
+    url: https://git.yoctoproject.org/meta-ti
+    branch: scarthgap
+    path: layers/third-party/meta-ti
+    layers:
+      meta-ti-bsp:
+      meta-beagle:
+
+machine: pocketbeagle
+
+local_conf_header:
+  BeagleBone: |
+    # Blank out so that we can create our own defconfig
+    KBRANCH:beaglebone-yocto = ""
+    KMACHINE:beaglebone-yocto = ""
+    
